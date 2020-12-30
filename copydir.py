@@ -22,8 +22,12 @@ if '--version' in sys.argv[1:] or '-v' in sys.argv[1:]:
 opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
 args = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
 
-source_dir = args[0]  # '/home/danilo/Downloads/vouchers'
-dest_dir = args[1]  # '/home/danilo/Documents'
+if len(args) == 2:
+    source_dir = args[0]  # '/home/danilo/Downloads/vouchers'
+    dest_dir = args[1]  # '/home/danilo/Documents'
+else:
+    source_dir = args[0]
+    dest_dir = None
 
 with_path = False
 if '-w' in opts:

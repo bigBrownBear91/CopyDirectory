@@ -12,6 +12,4 @@ class CopyAndList:
 
 class OnlyList:
     def __init__(self, dir, with_path=False):
-        new_dir = Copier(dir).get_target_folder()
-
-        Filelister(dir + '/' + new_dir, with_path)
+        Filelister(dir, with_path)
